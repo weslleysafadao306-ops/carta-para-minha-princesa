@@ -1,1 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para minha princesa ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffafcc,
+        #ffc8dd,
+        #cdb4db
+    );
+
+    font-family:Georgia,serif;
+
+}
+
+
+/* Fundo com brilho */
+
+body::before{
+
+content:"✨ ✨ ✨ ✨ ✨";
+
+position:absolute;
+
+top:20px;
+
+width:100%;
+
+text-align:center;
+
+font-size:35px;
+
+animation:brilhar 3s infinite alternate;
+
+}
+
+
+@keyframes brilhar{
+
+from{
+opacity:.3;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+
+/* Tela inicial */
+
+
+#inicio{
+
+text-align:center;
+
+z-index:5;
+
+}
+
+
+
+.titulo{
+
+font-size:45px;
+
+color:white;
+
+text-shadow:
+
+0 0 10px white,
+0 0 30px #ff1493;
+
+margin-bottom:40px;
+
+}
+
+
+
+.carta{
+
+width:320px;
+
+height:220px;
+
+background:
+
+linear-gradient(
+#fff,
+#ffd6e7
+);
+
+border-radius:25px;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+
+font-size:80px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 40px white,
+0 20px 50px #9d174d;
+
+
+animation:
+
+flutuar 3s infinite;
+
+}
+
+
+
+.carta p{
+
+font-size:18px;
+
+color:#c2185b;
+
+margin-top:15px;
+
+}
+
+
+
+@keyframes flutuar{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+
+
+/* Livro */
+
+
+#livro{
+
+display:none;
+
+width:420px;
+
+height:560px;
+
+z-index:5;
+
+}
+
+
+
+.pagina{
+
+background:
+
+linear-gradient(
+#fffdf8,
+#ffe6ef
+);
+
+
+width:100%;
+
+height:100%;
+
+
+border-radius:25px;
+
+
+padding:35px;
+
+
+box-shadow:
+
+0 0 40px white,
+0 20px 60px #0005;
+
+
+animation:
+
+abrir 1s;
+
+
+overflow:auto;
+
+}
+
+
+
+@keyframes abrir{
+
+from{
+
+transform:rotateY(90deg);
+
+opacity:0;
+
+}
+
+to{
+
+transform:rotateY(0);
+
+opacity:1;
+
+}
+
+}
+
+
+
+h1{
+
+font-size:40px;
+
+text-align:center;
+
+color:#d1005b;
+
+margin-bottom:25px;
+
+}
+
+
+
+p{
+
+font-size:18px;
+
+line-height:1.7;
+
+color:#5c3040;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div id="inicio">
+
+
+<div class="titulo">
+
+Para minha princesa ❤️
+
+</div>
+
+
+<div class="carta" onclick="abrirCarta()">
+
+💌
+
+<p>
+Clique para abrir
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="livro">
+
+
+<div class="pagina">
+
+
+<h1>
+🌹 Nossa história
+</h1>
+
+
+<p>
+Oi, minha princesa!
+</p>
+
+
+<p>
+Hoje é um grande dia para mim.
+Nosso primeiro mês juntos significa muito para o meu coração.
+</p>
+
+
+<p>
+Você chegou na minha vida em um momento em que eu precisava de uma luz, e desde então trouxe alegria para os meus dias.
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+function abrirCarta(){
+
+
+document.getElementById("inicio").style.display="none";
+
+
+document.getElementById("livro").style.display="block";
+
+criarRosas();
+}
+
+
+
+</script>
+<div id="efeitos"></div>
+
+<script>
+
+function criarRosas(){
+
+for(let i=0;i<20;i++){
+
+let rosa=document.createElement("div");
+
+rosa.innerHTML="🌹";
+
+rosa.style.position="fixed";
+rosa.style.top="-30px";
+rosa.style.left=Math.random()*100+"%";
+rosa.style.fontSize="30px";
+rosa.style.zIndex="20";
+
+rosa.style.animation="cairRosa 5s linear";
+
+document.body.appendChild(rosa);
+
+
+setTimeout(()=>{
+
+rosa.remove();
+
+},5000);
+
+}
+
+}
+
+</script>
+
+
+<style>
+
+@keyframes cairRosa{
+
+from{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</body>
+
+</html>
